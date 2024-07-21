@@ -1,3 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+}
+
 .example-container {
   width: 400px;
   max-width: 100%;
@@ -26,7 +35,7 @@
   box-sizing: border-box;
   cursor: move;
   background: white;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .cdk-drag-preview {
@@ -51,4 +60,22 @@
 
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.dropdown-button {
+  background-color: #fff;
+  border: none;
+  padding: 5px;
+  border-radius: 80px;
+  cursor: pointer;
+  z-index: 5; 
+}
+
+.dropdown-button:hover {
+  background-color: #fb9e9e;
+}
+
+i.fa-sharp.fa-solid.fa-xmark {
+  font-size: 18px;
+  color: red;
 }

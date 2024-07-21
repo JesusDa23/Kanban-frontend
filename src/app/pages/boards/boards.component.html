@@ -1,53 +1,68 @@
-<div class="example-container">
-    <h2>To do</h2>
-  
-    <div
-      cdkDropList
-      #todoList="cdkDropList"
-      [cdkDropListData]="todo"
-      [cdkDropListConnectedTo]="[inProgreslist, completedList]"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      @for (item of todo; track item) {
-        <div class="example-box" cdkDrag>{{item}}</div>
-      }
+<div class="container">
+    <div class="example-container">
+      <h2>Pending</h2>
+      <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="pending"
+        [cdkDropListConnectedTo]="[inprogresslist, completedlist]"
+        id="todoList"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of pending" class="example-box" cdkDrag>
+          <span>{{item.name}}</span>
+          <div class="dropdown">
+            <button class="dropdown-button">
+              <i class="fa-sharp fa-solid fa-xmark" (click)="deleteItem(item)"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <app-btn-create [state]="'Pending'" (cardAdded)="onCardAdded($event)"></app-btn-create>
     </div>
-    <app-btn-create></app-btn-create>
-  </div>
   
-  <div class="example-container">
-    <h2>In progress</h2>
-  
-    <div
-      cdkDropList
-      #inProgreslist="cdkDropList"
-      [cdkDropListData]="inProgress"
-      [cdkDropListConnectedTo]="[todoList, completedList ]"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      @for (item of inProgress; track item) {
-        <div class="example-box" cdkDrag>{{item}}</div>
-      }
+    <div class="example-container">
+      <h2>In Progress</h2>
+      <div
+        cdkDropList
+        #inprogresslist="cdkDropList"
+        [cdkDropListData]="inprogress"
+        [cdkDropListConnectedTo]="[todoList, completedlist]"
+        id="inprogresslist"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of inprogress" class="example-box" cdkDrag>
+          <span>{{item.name}}</span>
+          <div class="dropdown">
+            <button class="dropdown-button">
+              <i class="fa-sharp fa-solid fa-xmark" (click)="deleteItem(item)"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <app-btn-create [state]="'In Progress'" (cardAdded)="onCardAdded($event)"></app-btn-create>
     </div>
-    <app-btn-create></app-btn-create>
+  
+    <div class="example-container">
+      <h2>Completed</h2>
+      <div
+        cdkDropList
+        #completedlist="cdkDropList"
+        [cdkDropListData]="completed"
+        [cdkDropListConnectedTo]="[todoList, inprogresslist]"
+        id="completedlist"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of completed" class="example-box" cdkDrag>
+          <span>{{item.name}}</span>
+          <div class="dropdown">
+            <button class="dropdown-button">
+              <i class="fa-sharp fa-solid fa-xmark" (click)="deleteItem(item)"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <app-btn-create [state]="'Completed'" (cardAdded)="onCardAdded($event)"></app-btn-create>
+    </div>  
   </div>
-
-  <div class="example-container">
-    <h2>Completed</h2>
-  
-    <div
-      cdkDropList
-      #completedList="cdkDropList"
-      [cdkDropListData]="completed"
-      [cdkDropListConnectedTo]="[inProgreslist, todoList]"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      @for (item of completed; track item) {
-        <div class="example-box" cdkDrag>{{item}}</div>
-      }
-    </div>
-    <app-btn-create></app-btn-create>
-  </div>
-  
-  
   
