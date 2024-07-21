@@ -1,1 +1,50 @@
-<p>boards works!</p>
+<div class="example-container">
+    <h2>To do</h2>
+  
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[doneList, completedList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      @for (item of todo; track item) {
+        <div class="example-box" cdkDrag>{{item}}</div>
+      }
+    </div>
+  </div>
+  
+  <div class="example-container">
+    <h2>In progress</h2>
+  
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="inProgress"
+      [cdkDropListConnectedTo]="[todoList, completedList ]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      @for (item of inProgress; track item) {
+        <div class="example-box" cdkDrag>{{item}}</div>
+      }
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>Completed</h2>
+  
+    <div
+      cdkDropList
+      #completedList="cdkDropList"
+      [cdkDropListData]="completed"
+      [cdkDropListConnectedTo]="[completedList, todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      @for (item of completed; track item) {
+        <div class="example-box" cdkDrag>{{item}}</div>
+      }
+    </div>
+  </div>
+  
+  
+  
