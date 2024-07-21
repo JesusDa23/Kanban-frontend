@@ -6,11 +6,12 @@ import {
   CdkDrag,
   CdkDropList,
 } from '@angular/cdk/drag-drop';
+import { BtnCreateComponent } from "../btn-create/btn-create.component";
 
 @Component({
   selector: 'app-boards',
   standalone: true,
-  imports: [CdkDropList, CdkDrag],
+  imports: [ BtnCreateComponent,CdkDropList, CdkDrag, BtnCreateComponent],
   templateUrl: './boards.component.html',
   styleUrl: './boards.component.css'
 })
