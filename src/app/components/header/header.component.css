@@ -1,0 +1,61 @@
+.container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1)
+}
+  
+.logo {
+    font-size: 2.4rem;
+    text-decoration: none;
+}
+  
+.menu-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+  
+.menu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: whitesmoke;
+    flex-direction: column;
+    top: 2rem;
+}
+  
+.menu-container:hover .menu {
+    display: block;
+}
+  
+ul {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    margin-right: 2em;
+    padding: 0;
+}
+  
+a {
+    color: #000;
+    padding: 0.6rem 1.2rem;
+    display: block;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+  
+a:hover {
+    background-color: #000;
+    color: #fff;
+}
+  
+a span {
+    background-color: #000;
+    border-radius: 5rem;
+    color: #fff;
+    font-size: 1.1em;
+    padding: .1rem .45rem;
+}

@@ -1,1 +1,23 @@
-<p>header works!</p>
+<header>
+  <div class="container">
+    <a class="logo" [routerLink]="['/']" routerLinkActive="router-link-active"  >Kanban</a>
+    <nav>
+      <ul>
+        <li>
+          <a>Login</a>
+        </li>
+        <li class="menu-container">
+          <a>Menu</a>
+          <ul class="menu">
+            <li>
+              <a>Profile</a>
+            </li>
+            <li>
+              <a>Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
