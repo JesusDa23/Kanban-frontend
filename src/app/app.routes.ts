@@ -2,5 +2,6 @@ import { Routes } from '@angular/router';
 import { BoardsComponent } from './pages/boards/boards.component';
 
 export const routes: Routes = [
-    { path: '', component: BoardsComponent },
+    { path: '', redirectTo: 'home', pathMatch: 'full' }, 
+    { path: 'home', component: BoardsComponent },    
 ];

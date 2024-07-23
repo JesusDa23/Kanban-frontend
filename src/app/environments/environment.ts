@@ -1,3 +1,3 @@
 export const environment = {
-    baseUrl: 'http://localhost:5000/kanba-project-a8355/us-central1/app/api/card'
+    baseUrl: 'https://us-central1-kanba-project-a8355.cloudfunctions.net/app/api/card'
 }
